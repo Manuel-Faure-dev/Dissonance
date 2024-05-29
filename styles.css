@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+}
+body {
+    background-color: #030303;
+    /* position: relative; */
+}
+
+.container {
+    max-width: 1140px;
+}
+
+/* ------------------- Partie Header -------------*/
+header {
+    background-image: url('./assets/logos/logo-dissonance.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: contain;
+    height: 100vh;
+    width: 100%;
+    z-index: 0;
+    /* position: relative; */
+}
+nav {
+    z-index: 1;
+    margin: auto;
+    width: 80%;
+    margin-top: 2em;
+    position: sticky;
+    top: 0;
+    /* left: 50%;
+    transform: translateX(-50%); */
+    padding: 0.2em;
+    /* border-bottom: 1px solid white; */
+    box-shadow: 5px 5px 40px #e5975f;
+}
+nav div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav ul a:hover {
+    color: #e5975f;
+}
+nav ul li div {
+    display: flex;
+    column-gap: 0.7em;
+}
+.rs-img {
+    max-height: 1.5em;
+}
+#logo-img {
+    height: 3em;
+}
+
+/*---------------- Partie Main ----------------*/
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 0;
+}
+
+/* Section présentation */
+.presentation-section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3em;
+    padding: 5em 0 7em 0;
+}
+.presentation-section p {
+    font-size: 1.3em;
+    line-height: 1.6em;
+}
+h1 {
+    margin: auto;
+    font-size: 2em;
+}
+.presentation-section button:hover {
+    color: #e5975f;
+}
+.presentation-section button {
+    margin: auto;
+    padding: 0.5em 2em;
+    color: black;
+    border-radius: 0.5em;
+    font-size: 1.1em;
+    font-weight: 700;
+    border: 5px double black;
+}
+
+/* Section Galerie */
+.galery-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 7em 0;
+    justify-content: space-between;
+}
+.galery-section .galery-div {
+    border: 1px solid orange;
+    width: 15em;
+    height: 10em;
+}
+
+/*---------------- Partie Footer -------------*/
+footer {
+}
+footer .footer-section {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.4em 0;
+}
+footer .footer-section a:hover {
+    color: #e5975f;
+}
+footer .footer-contact-div {
+    row-gap: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer a {
+    color: white;
+}
+#footer-logo-img {
+    height: 3em;
+}
+footer a img {
+    max-height: 1.5em;
+    transition: all 500ms ease-in-out;
+}
+footer a img:hover {
+    transform: rotateY(360deg);
+}
+footer .footer-mail-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.2em;
+}
+footer .footer-mail-div p {
+    text-align: center;
+}
+footer .footer-mail-div .fa-envelope,
+footer .footer-mail-div .fa-phone {
+    margin-right: 0.5em;
+}
+
+/* Fenêtre google map */
+.google-map-iframe {
+    height: 200px;
+    width: 400px;
+}
+
+.rs-footer-div {
+    display: flex;
+    column-gap: 0.5em;
+}
+
+footer .useful-link-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+footer .useful-link-div h5 {
+    font-size: 1.4em;
+    margin: 0 0 0.5em 0;
+}
+footer .useful-link-div ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+}
+.footer-bottom-section {
+    padding: 1.5em;
+    text-align: center;
+}
+
+/* Gestion du responsive */
