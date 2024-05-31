@@ -39,12 +39,14 @@ header {
     position: sticky;
     top: 1em;
     z-index: 160;
+    background-color: transparent !important;
 }
 nav {
     margin: auto;
     width: 80%;
     padding: 0.2em;
     box-shadow: 5px 5px 80px $band-camp;
+    background-color: transparent !important;
     div {
         display: flex;
         align-items: center;
@@ -96,32 +98,21 @@ main {
             font-size: 2em;
         }
         button {
-            position: relative;
             margin: auto;
             padding: 0.5em 2em;
-            color: black;
             border-radius: 0.5em;
             font-size: 1.1em;
-            font-weight: 700;
-            border: 4px dashed black;
-            background-color: $bg-color;
+            font-weight: 400;
             transition: 300ms ease;
-        }
-        // button::after {
-        //     content: '';
-        //     position: absolute;
-        //     top: 0;
-        //     left: 0;
-        //     width: 100%;
-        //     height: 100%;
-        // }
-        button:hover {
             border-style: dashed;
             color: white;
-            //text-shadow: 0px 0px 1px black;
             box-shadow: 0px 0px 25px $band-camp;
             background-color: #333;
             border-color: $beatport;
+        }
+        button:hover {
+            color: $beatport;
+            box-shadow: 0px 0px 25px $beatport;
         }
     }
 
@@ -134,23 +125,13 @@ main {
         justify-content: space-between;
         .galery-div {
             border: 1px solid #00e586;
-            width: 15em;
-            height: 10em;
+            width: 18em;
+            height: 12em;
         }
     }
 
     /* Section link Beatport et band camp */
     .beat-band-link-section {
-        padding: 7em 0 10em 0;
-        h2 {
-            pointer-events: none;
-        }
-        .dr {
-            position: absolute;
-            bottom: 16px;
-            right: 16px;
-            width: 100px;
-        }
         .container-lg {
             width: 100%;
             height: 100%;
@@ -158,7 +139,7 @@ main {
             justify-content: center;
             align-items: center;
             flex-direction: row;
-            column-gap: 3em;
+            column-gap: 5em;
             // card band camp
             .card {
                 position: relative;
@@ -192,30 +173,14 @@ main {
                     border-radius: 16px;
                     background-color: $bg-color;
                 }
-                ul {
-                    z-index: 110;
-                    position: absolute;
-                    left: 39px;
-                    top: 5px;
-                    list-style-type: none;
-                    color: white;
-                    li {
-                        width: 2px;
-                        height: 2px;
-                        border-radius: 2px;
-                        margin: 6px 0;
-                        background-color: $bg-color;
-                        color: $shdow-gray;
-                    }
-                }
                 h2 {
                     z-index: 150;
                     font-family: 'Poppins', sans-serif;
                     position: absolute;
                     bottom: 0;
                     right: 130px;
-                    font-size: 60px;
-                    font-weight: 700;
+                    font-size: 3em;
+                    font-weight: 100;
                     color: #fff;
                     background-color: transparent;
                 }
@@ -342,6 +307,16 @@ main {
                 }
             }
         }
+        padding: 7em 0 10em 0;
+        h2 {
+            pointer-events: none;
+        }
+        .dr {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            width: 100px;
+        }
         i {
             opacity: 0;
             font-size: 18px;
@@ -352,6 +327,164 @@ main {
             -webkit-transition: all 0.2s ease;
             transition: all 0.2s ease;
             z-index: 110;
+        }
+    }
+
+    // Section modale formulaire de contact
+    @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600&subset=latin-ext');
+    @media screen and (max-width: 768px) {
+        html,
+        body {
+            font-size: 12px;
+        }
+    }
+    .popup {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 200;
+        visibility: hidden;
+        opacity: 0;
+        overflow: hiden;
+        transition: 0.64s ease-in-out;
+        &-inner {
+            position: relative;
+            bottom: -100vw;
+            right: -100vh;
+            display: flex;
+            align-items: center;
+            max-width: 850px;
+            max-height: 700px;
+            width: 60%;
+            height: 90%;
+            background-color: #fff;
+            transform: rotate(32deg);
+            transition: 0.64s ease-in-out;
+        }
+        &__photo {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            width: 30%;
+            height: 100%;
+            overflow: hidden;
+            img {
+                width: auto;
+                height: 100%;
+            }
+        }
+        &__text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 70%;
+            height: 100%;
+            padding: 1rem 2rem;
+            background-color: rgb(42, 42, 42);
+            h2 {
+                font-size: 2rem;
+                font-weight: 600;
+                margin-bottom: 1.5rem;
+                text-transform: uppercase;
+                background-color: transparent;
+                text-align: center;
+            }
+            p {
+                font-size: 1.1rem;
+                text-align: center;
+                line-height: 1.5;
+                background-color: transparent;
+            }
+        }
+        &:target {
+            visibility: visible;
+            opacity: 1;
+            .popup-inner {
+                bottom: 0;
+                right: 0;
+                transform: rotate(0);
+            }
+        }
+        &__close {
+            position: absolute;
+            right: -1rem;
+            top: -1rem;
+            width: 3rem;
+            height: 3rem;
+            font-size: 0.875rem;
+            font-weight: 300;
+            border-radius: 100%;
+            background-color: #0a0a0a;
+            z-index: 4;
+            color: #fff;
+            line-height: 3rem;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    }
+    form {
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.2em;
+        .form-adress-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 1em;
+            background: transparent;
+        }
+        input {
+            width: 60%;
+            padding: 0.7em;
+            border-radius: 1em;
+            border: 3px solid $bg-color;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            font-size: 1em;
+        }
+        div div {
+            background-color: #2a2a2a;
+            background: #2a2a2a;
+            width: 75%;
+            display: flex;
+            justify-content: space-around;
+        }
+        a {
+            background-color: #2a2a2a;
+        }
+        i {
+            background-color: #2a2a2a;
+            margin-right: 0.4em;
+        }
+
+        label {
+            border-radius: 1em;
+            background-color: transparent;
+        }
+
+        textarea {
+            width: 100%;
+            height: 13rem;
+            border-radius: 1em;
+            padding: 1em;
+            resize: none;
+            border: 3px solid $bg-color;
+            font-size: 1em;
+        }
+        button {
+            padding: 0.5em 4em;
+            border-radius: 1em;
+            width: 40%;
+            margin-left: 50%;
+            transform: translateX(-50%);
         }
     }
 }
@@ -448,6 +581,9 @@ footer {
         span {
             // color: white !important;
         }
+    }
+    header {
+        background-size: contain;
     }
     main {
         .presentation-section {

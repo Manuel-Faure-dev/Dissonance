@@ -37,6 +37,7 @@ header {
   position: sticky;
   top: 1em;
   z-index: 160;
+  background-color: transparent !important;
 }
 
 nav {
@@ -44,6 +45,7 @@ nav {
   width: 80%;
   padding: 0.2em;
   box-shadow: 5px 5px 80px #1da0c3;
+  background-color: transparent !important;
 }
 nav div {
   display: flex;
@@ -84,6 +86,7 @@ main {
   /* Section présentation */
   /* Section Galerie */
   /* Section link Beatport et band camp */
+  @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600&subset=latin-ext");
 }
 main .presentation-section {
   display: flex;
@@ -100,23 +103,21 @@ main .presentation-section h1 {
   font-size: 2em;
 }
 main .presentation-section button {
-  position: relative;
   margin: auto;
   padding: 0.5em 2em;
-  color: black;
   border-radius: 0.5em;
   font-size: 1.1em;
-  font-weight: 700;
-  border: 4px dashed black;
-  background-color: #e6e5e1;
+  font-weight: 400;
   transition: 300ms ease;
-}
-main .presentation-section button:hover {
   border-style: dashed;
   color: white;
   box-shadow: 0px 0px 25px #1da0c3;
   background-color: #333;
   border-color: #01e586;
+}
+main .presentation-section button:hover {
+  color: #01e586;
+  box-shadow: 0px 0px 25px #01e586;
 }
 main .galery-section {
   display: flex;
@@ -127,20 +128,11 @@ main .galery-section {
 }
 main .galery-section .galery-div {
   border: 1px solid #00e586;
-  width: 15em;
-  height: 10em;
+  width: 18em;
+  height: 12em;
 }
 main .beat-band-link-section {
   padding: 7em 0 10em 0;
-}
-main .beat-band-link-section h2 {
-  pointer-events: none;
-}
-main .beat-band-link-section .dr {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-  width: 100px;
 }
 main .beat-band-link-section .container-lg {
   width: 100%;
@@ -149,8 +141,8 @@ main .beat-band-link-section .container-lg {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  -moz-column-gap: 3em;
-       column-gap: 3em;
+  -moz-column-gap: 5em;
+       column-gap: 5em;
 }
 main .beat-band-link-section .container-lg .card {
   position: relative;
@@ -184,30 +176,14 @@ main .beat-band-link-section .container-lg .card:after {
   border-radius: 16px;
   background-color: #e6e5e1;
 }
-main .beat-band-link-section .container-lg .card ul {
-  z-index: 110;
-  position: absolute;
-  left: 39px;
-  top: 5px;
-  list-style-type: none;
-  color: white;
-}
-main .beat-band-link-section .container-lg .card ul li {
-  width: 2px;
-  height: 2px;
-  border-radius: 2px;
-  margin: 6px 0;
-  background-color: #e6e5e1;
-  color: #d3d3d5;
-}
 main .beat-band-link-section .container-lg .card h2 {
   z-index: 150;
   font-family: "Poppins", sans-serif;
   position: absolute;
   bottom: 0;
   right: 130px;
-  font-size: 60px;
-  font-weight: 700;
+  font-size: 3em;
+  font-weight: 100;
   color: #fff;
   background-color: transparent;
 }
@@ -305,6 +281,15 @@ main .beat-band-link-section .container-lg .card2 button {
   z-index: 125;
   background-color: #01e586;
 }
+main .beat-band-link-section h2 {
+  pointer-events: none;
+}
+main .beat-band-link-section .dr {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 100px;
+}
 main .beat-band-link-section i {
   opacity: 0;
   font-size: 18px;
@@ -313,6 +298,159 @@ main .beat-band-link-section i {
   transform: scale(0.1);
   transition: all 0.2s ease;
   z-index: 110;
+}
+@media screen and (max-width: 768px) {
+  main html,
+  main body {
+    font-size: 12px;
+  }
+}
+main .popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 200;
+  visibility: hidden;
+  opacity: 0;
+  overflow: hiden;
+  transition: 0.64s ease-in-out;
+}
+main .popup-inner {
+  position: relative;
+  bottom: -100vw;
+  right: -100vh;
+  display: flex;
+  align-items: center;
+  max-width: 850px;
+  max-height: 700px;
+  width: 60%;
+  height: 90%;
+  background-color: #fff;
+  transform: rotate(32deg);
+  transition: 0.64s ease-in-out;
+}
+main .popup__photo {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 30%;
+  height: 100%;
+  overflow: hidden;
+}
+main .popup__photo img {
+  width: auto;
+  height: 100%;
+}
+main .popup__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 70%;
+  height: 100%;
+  padding: 1rem 2rem;
+  background-color: rgb(42, 42, 42);
+}
+main .popup__text h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  background-color: transparent;
+  text-align: center;
+}
+main .popup__text p {
+  font-size: 1.1rem;
+  text-align: center;
+  line-height: 1.5;
+  background-color: transparent;
+}
+main .popup:target {
+  visibility: visible;
+  opacity: 1;
+}
+main .popup:target .popup-inner {
+  bottom: 0;
+  right: 0;
+  transform: rotate(0);
+}
+main .popup__close {
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+  border-radius: 100%;
+  background-color: #0a0a0a;
+  z-index: 4;
+  color: #fff;
+  line-height: 3rem;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+main form {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.2em;
+}
+main form .form-adress-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1em;
+  background: transparent;
+}
+main form input {
+  width: 60%;
+  padding: 0.7em;
+  border-radius: 1em;
+  border: 3px solid #e6e5e1;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  font-size: 1em;
+}
+main form div div {
+  background-color: #2a2a2a;
+  background: #2a2a2a;
+  width: 75%;
+  display: flex;
+  justify-content: space-around;
+}
+main form a {
+  background-color: #2a2a2a;
+}
+main form i {
+  background-color: #2a2a2a;
+  margin-right: 0.4em;
+}
+main form label {
+  border-radius: 1em;
+  background-color: transparent;
+}
+main form textarea {
+  width: 100%;
+  height: 13rem;
+  border-radius: 1em;
+  padding: 1em;
+  resize: none;
+  border: 3px solid #e6e5e1;
+  font-size: 1em;
+}
+main form button {
+  padding: 0.5em 4em;
+  border-radius: 1em;
+  width: 40%;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 /*---------------- Partie Footer -------------*/
@@ -395,7 +533,9 @@ footer .footer-bottom-section {
   .navbar {
     top: 0;
     width: 100%;
-    justify-content: flex-end !important;
+  }
+  header {
+    background-size: contain;
   }
   main .presentation-section {
     padding: 4em 1em;

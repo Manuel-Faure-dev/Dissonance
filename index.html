@@ -52,7 +52,9 @@
                     ></span>
                 </button>
                 <div class="collapse mt-1 navbar-collapse" id="navbarScroll">
-                    <ul class="navbar-nav my-lg-0 navbar-nav-scroll w-100">
+                    <ul
+                        class="navbar-nav my-lg-0 p-lg-1 navbar-nav-scroll w-100"
+                    >
                         <li>
                             <a href="index.html"
                                 ><img
@@ -87,23 +89,29 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item bg-body" href="#"
+                                        >Action</a
+                                    >
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#"
+                                    <a class="dropdown-item bg-body" href="#"
                                         >Another action</a
                                     >
                                 </li>
                                 <li><hr class="dropdown-divider" /></li>
                                 <li>
-                                    <a class="dropdown-item" href="#"
+                                    <a class="dropdown-item bg-body" href="#"
                                         >Something else here</a
                                     >
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" aria-disabled="true"
+                            <a
+                                class="nav-link text-white"
+                                aria-disabled="true"
+                                class="button"
+                                href="#popup"
                                 >CONTACT</a
                             >
                         </li>
@@ -133,7 +141,9 @@
                 </div>
             </div>
         </nav>
-        <header></header>
+        <header>
+            <!-- <div class="modal-dialog modal-lg">Open</div> -->
+        </header>
         <main>
             <!-- Section de presentation des studio Krearts -->
             <section class="presentation-section container-lg">
@@ -208,10 +218,10 @@
                             <p>a lonely trip.</p>
                             <div class="pic"></div>
                             <div class="social">
-                                <i class="fab fa-facebook-f"></i>
-                                <i class="fab fa-twitter"></i>
-                                <i class="fab fa-instagram"></i>
-                                <i class="fab fa-github"></i>
+                                <i class="fa-solid fa-headphones-simple"></i>
+                                <i class="fa-solid fa-sliders"></i>
+                                <i class="fa-solid fa-compact-disc"></i>
+                                <i class="fa-solid fa-wave-square"></i>
                             </div>
                             <button></button>
                         </div>
@@ -219,15 +229,15 @@
                     <!-- Lien vers beatport -->
                     <a href="https://stream.beatport.com/" target="_blank">
                         <div class="card card2">
-                            <h2>Beatport</h2>
+                            <h2>Mes samples</h2>
                             <i class="fas fa-arrow-right"></i>
                             <p>a lonely trip.</p>
                             <div class="pic"></div>
                             <div class="social">
-                                <i class="fab fa-facebook-f"></i>
-                                <i class="fab fa-twitter"></i>
-                                <i class="fab fa-instagram"></i>
-                                <i class="fab fa-github"></i>
+                                <i class="fa-solid fa-headphones-simple"></i>
+                                <i class="fa-solid fa-sliders"></i>
+                                <i class="fa-solid fa-compact-disc"></i>
+                                <i class="fa-solid fa-wave-square"></i>
                             </div>
                             <button></button>
                         </div>
@@ -243,6 +253,68 @@
                         alt=""
                 /></a>
             </section>
+            <!-- modale / formulaire de contact -->
+
+            <div class="popup" id="popup">
+                <div class="popup-inner">
+                    <div class="popup__photo">
+                        <img
+                            src="https://images.unsplash.com/photo-1515224526905-51c7d77c7bb8?ixlib=rb-0.3.5&s=9980646201037d28700d826b1bd096c4&auto=format&fit=crop&w=700&q=80"
+                            alt=""
+                        />
+                    </div>
+                    <div class="popup__text">
+                        <h2>Pour nous contacter</h2>
+
+                        <form
+                            action="https://formspree.io/f/moqgojbd"
+                            method="POST"
+                        >
+                            <div class="form-adress-div">
+                                <p>
+                                    Dissonance Studio <br />
+                                    350 route des pacaliers <br />
+                                    Saint-Laurent en Royans
+                                </p>
+                                <div>
+                                    <a href="mailto:"
+                                        ><i class="fa-solid fa-envelope"></i>
+                                        adresse email</a
+                                    >
+                                    <a href="tel:">
+                                        <i class="fa-solid fa-phone"></i
+                                        >06.82.07.65.07</a
+                                    >
+                                </div>
+                            </div>
+                            <label for="name">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    id="name"
+                                    placeholder="Votre nom"
+                                />
+                            </label>
+                            <label for="email">
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Votre Email"
+                                />
+                            </label>
+                            <label for="message">
+                                <textarea
+                                    name="message"
+                                    placeholder="Votre message"
+                                ></textarea>
+                            </label>
+                            <!-- your other form fields go here -->
+                            <button type="submit" name="submit">Envoyer</button>
+                        </form>
+                    </div>
+                    <a class="popup__close" href="#">X</a>
+                </div>
+            </div>
         </main>
         <footer>
             <section class="footer-section container-lg">
