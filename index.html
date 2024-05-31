@@ -38,15 +38,8 @@
     <body>
         <nav id="nav" class="navbar navbar-expand-lg p-0 text-white">
             <div class="container-fluid">
-                <a href="index.html"
-                    ><img
-                        class="navbar-brand"
-                        id="logo-img"
-                        src="./assets/logos/logo-dissonance.png"
-                        alt="logo-dissonance"
-                /></a>
                 <button
-                    class="navbar-toggler"
+                    class="navbar-toggler bg-white text-primary"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#navbarScroll"
@@ -54,10 +47,21 @@
                     aria-expanded="false"
                     aria-label="Toggle navigation"
                 >
-                    <span class="navbar-toggler-icon"></span>
+                    <span
+                        class="navbar-toggler-icon bg-white text-primary"
+                    ></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarScroll">
-                    <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll w-100">
+                    <ul class="navbar-nav my-lg-0 navbar-nav-scroll w-100">
+                        <li>
+                            <a href="index.html"
+                                ><img
+                                    class="navbar-brand"
+                                    id="logo-img"
+                                    src="./assets/logos/logo-dissonance.png"
+                                    alt="logo-dissonance"
+                            /></a>
+                        </li>
                         <li class="nav-item">
                             <a
                                 class="nav-link active text-white"
@@ -129,11 +133,10 @@
                 </div>
             </div>
         </nav>
-
         <header></header>
         <main>
             <!-- Section de presentation des studio Krearts -->
-            <section class="presentation-section container-size">
+            <section class="presentation-section container-lg">
                 <h1>Studios Krearts</h1>
                 <p>
                     Les Studios disonence mettent à votre disposition un
@@ -153,7 +156,7 @@
                 <button type="button">Contactez-nous</button>
             </section>
             <!-- Section galerie de photo / dessin  -->
-            <section class="galery-section container-size">
+            <section class="galery-section container-lg">
                 <div class="galery-div">
                     <img src="" alt="" />
                 </div>
@@ -192,86 +195,44 @@
                 </div>
             </section>
             <!-- Section de lien vers Beatport et band camp -->
-            <section class="beat-band-link-section">
-                <div class="container">
-                    <div class="card">
-                        <h2>North</h2>
-                        <i class="fas fa-arrow-right"></i>
-                        <p>a lonely trip.</p>
-                        <div class="pic"></div>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                        <div class="social">
-                            <i class="fab fa-facebook-f"></i>
-                            <i class="fab fa-twitter"></i>
-                            <i class="fab fa-instagram"></i>
-                            <i class="fab fa-github"></i>
+            <section class="beat-band-link-section container-lg">
+                <div class="container-lg">
+                    <!-- lien vers band camp -->
+                    <a
+                        href="https://sombresoniks.bandcamp.com/album/solve-coagula"
+                        target="_blank"
+                    >
+                        <div class="card">
+                            <h2>Mes albums</h2>
+                            <i class="fas fa-arrow-right"></i>
+                            <p>a lonely trip.</p>
+                            <div class="pic"></div>
+                            <div class="social">
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-instagram"></i>
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <button></button>
                         </div>
-                        <button></button>
-                    </div>
-                    <div class="card card2">
-                        <h2>Vauxhall</h2>
-                        <i class="fas fa-arrow-right"></i>
-                        <p>a lonely trip.</p>
-                        <div class="pic"></div>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                        <div class="social">
-                            <i class="fab fa-facebook-f"></i>
-                            <i class="fab fa-twitter"></i>
-                            <i class="fab fa-instagram"></i>
-                            <i class="fab fa-github"></i>
+                    </a>
+                    <!-- Lien vers beatport -->
+                    <a href="https://stream.beatport.com/" target="_blank">
+                        <div class="card card2">
+                            <h2>Beatport</h2>
+                            <i class="fas fa-arrow-right"></i>
+                            <p>a lonely trip.</p>
+                            <div class="pic"></div>
+                            <div class="social">
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-instagram"></i>
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <button></button>
                         </div>
-                        <button></button>
-                    </div>
+                    </a>
                 </div>
-
                 <a
                     href="https://dribbble.com/YancyMin"
                     class="dr-url"
@@ -284,7 +245,7 @@
             </section>
         </main>
         <footer>
-            <section class="footer-section container-size">
+            <section class="footer-section container-lg">
                 <div class="footer-contact-div">
                     <img
                         id="footer-logo-img"
@@ -302,8 +263,7 @@
                             email</a
                         >
                         <a href="tel:">
-                            <i class="fa-solid fa-phone"></i>Numéro de
-                            téléphone</a
+                            <i class="fa-solid fa-phone"></i>06.82.07.65.07</a
                         >
                     </div>
                 </div>
@@ -370,7 +330,7 @@
                     </ul>
                 </div>
             </section>
-            <section class="footer-bottom-section">
+            <section class="footer-bottom-section container-lg">
                 <p>
                     Copyrights © Dissonance Studio 2024. Site réalisé par
                     <a href="https://manu-dev.fr/"

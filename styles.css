@@ -5,6 +5,7 @@
   box-sizing: border-box;
   list-style-type: none;
   color: white;
+  background-color: #030303;
 }
 
 body {
@@ -21,10 +22,6 @@ ul {
   padding: 0;
 }
 
-.container-size {
-  max-width: 1140px;
-}
-
 /* ------------------- Partie Header -------------*/
 header {
   background-image: url("./assets/logos/logo-dissonance.png");
@@ -36,49 +33,46 @@ header {
   width: 100%;
 }
 
-/* --------- nab boostrap -------*/
 .navbar {
-  background-color: #030303;
   position: sticky;
-  top: 0;
+  top: 1em;
+  z-index: 160;
 }
 
 nav {
   margin: auto;
   width: 80%;
-  margin-top: 2em;
-  position: sticky;
   padding: 0.2em;
-  box-shadow: 5px 5px 40px #e5975f;
+  box-shadow: 5px 5px 80px #1da0c3;
 }
-
 nav div {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 nav ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  row-gap: 0.5em;
+  padding: 0.4em 0 0.7em 0;
 }
-
-nav ul a:hover {
-  color: #e5975f;
+nav .nav-link {
+  cursor: pointer;
 }
-
+nav .nav-link:hover {
+  color: #01e586 !important;
+}
 nav ul li div {
   display: flex;
   -moz-column-gap: 0.7em;
        column-gap: 0.7em;
+  margin: 8px 0;
 }
-
-.rs-img {
+nav .rs-img {
   max-height: 1.5em;
 }
-
-#logo-img {
+nav #logo-img {
   height: 3em;
 }
 
@@ -87,63 +81,68 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* Section présentation */
+  /* Section Galerie */
+  /* Section link Beatport et band camp */
 }
-
-/* Section présentation */
-.presentation-section {
+main .presentation-section {
   display: flex;
   flex-direction: column;
   row-gap: 3em;
   padding: 5em 0 7em 0;
 }
-
-.presentation-section p {
+main .presentation-section p {
   font-size: 1.3em;
   line-height: 1.6em;
 }
-
-h1 {
+main .presentation-section h1 {
   margin: auto;
   font-size: 2em;
 }
-
-.presentation-section button:hover {
-  color: #e5975f;
-}
-
-.presentation-section button {
+main .presentation-section button {
+  position: relative;
   margin: auto;
   padding: 0.5em 2em;
   color: black;
   border-radius: 0.5em;
   font-size: 1.1em;
   font-weight: 700;
-  border: 5px double black;
+  border: 4px dashed black;
+  background-color: #e6e5e1;
+  transition: 300ms ease;
 }
-
-/* Section Galerie */
-.galery-section {
+main .presentation-section button:hover {
+  border-style: dashed;
+  color: white;
+  box-shadow: 0px 0px 25px #1da0c3;
+  background-color: #333;
+  border-color: #01e586;
+}
+main .galery-section {
   display: flex;
   flex-wrap: wrap;
   gap: 2em;
   padding: 7em 0;
   justify-content: space-between;
 }
-
-.galery-section .galery-div {
-  border: 1px solid orange;
+main .galery-section .galery-div {
+  border: 1px solid #00e586;
   width: 15em;
   height: 10em;
 }
-
-/* Section link Beatport et band camp */
-.beat-band-link-section {
+main .beat-band-link-section {
   padding: 7em 0 10em 0;
 }
-.beat-band-link-section h2 {
+main .beat-band-link-section h2 {
   pointer-events: none;
 }
-.beat-band-link-section .container {
+main .beat-band-link-section .dr {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 100px;
+}
+main .beat-band-link-section .container-lg {
   width: 100%;
   height: 100%;
   display: flex;
@@ -153,7 +152,7 @@ h1 {
   -moz-column-gap: 3em;
        column-gap: 3em;
 }
-.beat-band-link-section .container .card {
+main .beat-band-link-section .container-lg .card {
   position: relative;
   width: 500px;
   height: 200px;
@@ -161,7 +160,7 @@ h1 {
   overflow: hidden;
   margin-bottom: 4px;
 }
-.beat-band-link-section .container .card:before {
+main .beat-band-link-section .container-lg .card:before {
   content: "";
   z-index: 110;
   position: absolute;
@@ -173,7 +172,7 @@ h1 {
   border-radius: 16px;
   background-color: #e6e5e1;
 }
-.beat-band-link-section .container .card:after {
+main .beat-band-link-section .container-lg .card:after {
   content: "";
   z-index: 110;
   position: absolute;
@@ -185,22 +184,24 @@ h1 {
   border-radius: 16px;
   background-color: #e6e5e1;
 }
-.beat-band-link-section .container .card ul {
+main .beat-band-link-section .container-lg .card ul {
   z-index: 110;
   position: absolute;
   left: 39px;
   top: 5px;
   list-style-type: none;
+  color: white;
 }
-.beat-band-link-section .container .card ul li {
+main .beat-band-link-section .container-lg .card ul li {
   width: 2px;
   height: 2px;
   border-radius: 2px;
   margin: 6px 0;
   background-color: #e6e5e1;
+  color: #d3d3d5;
 }
-.beat-band-link-section .container .card h2 {
-  z-index: 120;
+main .beat-band-link-section .container-lg .card h2 {
+  z-index: 150;
   font-family: "Poppins", sans-serif;
   position: absolute;
   bottom: 0;
@@ -208,16 +209,19 @@ h1 {
   font-size: 60px;
   font-weight: 700;
   color: #fff;
+  background-color: transparent;
 }
-.beat-band-link-section .container .card .fa-arrow-right {
-  z-index: 120;
+main .beat-band-link-section .container-lg .card .fa-arrow-right {
+  background-color: transparent;
+  z-index: 150;
   position: absolute;
   right: 75px;
   bottom: 25px;
   font-size: 40px;
   cursor: pointer;
 }
-.beat-band-link-section .container .card p {
+main .beat-band-link-section .container-lg .card p {
+  background-color: transparent;
   z-index: 99;
   position: absolute;
   top: 20px;
@@ -229,15 +233,14 @@ h1 {
   writing-mode: vertical-lr;
   transition: all 0.2s ease;
 }
-.beat-band-link-section .container .card .pic {
+main .beat-band-link-section .container-lg .card .pic {
   z-index: 100;
   width: 400px;
   height: 200px;
-  background-image: url("https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80");
+  background-image: url(./assets/pictures/banniere-bandcamp.jpg);
   background-size: 100% 100%;
-  filter: grayscale(100%);
 }
-.beat-band-link-section .container .card .social {
+main .beat-band-link-section .container-lg .card .social {
   position: absolute;
   left: 60px;
   top: 0;
@@ -248,56 +251,61 @@ h1 {
   height: 64px;
   border-radius: 80px;
 }
-.beat-band-link-section .container .card .social i:nth-of-type(1) {
+main .beat-band-link-section .container-lg .card .social i:nth-of-type(1) {
   transition-delay: 0.4s;
+  background: transparent;
 }
-.beat-band-link-section .container .card .social i:nth-of-type(2) {
+main .beat-band-link-section .container-lg .card .social i:nth-of-type(2) {
   transition-delay: 0.3s;
+  background: transparent;
 }
-.beat-band-link-section .container .card .social i:nth-of-type(3) {
+main .beat-band-link-section .container-lg .card .social i:nth-of-type(3) {
   transition-delay: 0.2s;
+  background: transparent;
 }
-.beat-band-link-section .container .card .social i:nth-of-type(4) {
+main .beat-band-link-section .container-lg .card .social i:nth-of-type(4) {
   transition-delay: 0.1s;
+  background: transparent;
 }
-.beat-band-link-section .container .card:hover i {
+main .beat-band-link-section .container-lg .card:hover i {
   opacity: 1;
   transform: scale(1);
 }
-.beat-band-link-section .container .card button {
+main .beat-band-link-section .container-lg .card button {
   z-index: 115;
   position: absolute;
   right: 14px;
   bottom: 14px;
   width: 30px;
   height: 30px;
-  background-color: #da4d1d;
+  background-color: #1da0c3;
   border: none;
   border-radius: 30px;
   cursor: pointer;
   outline: none;
   transition: all 1000ms ease;
-  mix-blend-mode: hard-light;
+  mix-blend-mode: darken;
 }
-.beat-band-link-section .container .card button i {
+main .beat-band-link-section .container-lg .card button i {
   font-size: 3rem;
 }
-.beat-band-link-section .container .card:hover button {
+main .beat-band-link-section .container-lg .card:hover button {
   transform: scale(16.5);
 }
-.beat-band-link-section .container .card:hover p {
+main .beat-band-link-section .container-lg .card:hover p {
   color: #fff;
 }
-.beat-band-link-section .container .card:hover .pic {
+main .beat-band-link-section .container-lg .card:hover .pic {
   filter: grayscale(0);
 }
-.beat-band-link-section .container .card2 .pic {
-  background-image: url("https://images.unsplash.com/photo-1528785198459-ec50485704c7?ixlib=rb-0.3.5&s=3a2fc3039516555bbb2e9cd2967bd321&auto=format&fit=crop&w=1537&q=80");
+main .beat-band-link-section .container-lg .card2 .pic {
+  background-image: url("./assets/pictures/banniere-beatport.jpg");
 }
-.beat-band-link-section .container .card2 button {
-  background-color: #2b26c3;
+main .beat-band-link-section .container-lg .card2 button {
+  z-index: 125;
+  background-color: #01e586;
 }
-.beat-band-link-section i {
+main .beat-band-link-section i {
   opacity: 0;
   font-size: 18px;
   color: #fff;
@@ -307,24 +315,42 @@ h1 {
   z-index: 110;
 }
 
-.dr {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-  width: 100px;
-}
-
 /*---------------- Partie Footer -------------*/
 footer .footer-section {
+  border-top: 1px solid white;
   /* width: 80%; */
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.4em 0;
+  padding: 1.4em;
+  /* Fenêtre google map */
+}
+footer .footer-section .google-map-iframe {
+  height: 13em;
+  width: 25em;
+}
+footer .footer-section .rs-footer-div {
+  display: flex;
+  -moz-column-gap: 0.5em;
+       column-gap: 0.5em;
+}
+footer .footer-section .useful-link-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+footer .footer-section .useful-link-div h5 {
+  font-size: 1.4em;
+  margin: 0 0 0.5em 0;
+}
+footer .footer-section .useful-link-div ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
 }
 footer .footer-section a:hover {
-  color: #e5975f;
+  color: #01e586;
 }
 footer .footer-contact-div {
   row-gap: 1em;
@@ -358,63 +384,59 @@ footer .footer-mail-div .fa-envelope,
 footer .footer-mail-div .fa-phone {
   margin-right: 0.5em;
 }
-
-/* Fenêtre google map */
-.google-map-iframe {
-  height: 13em;
-  width: 20em;
-}
-
-.rs-footer-div {
-  display: flex;
-  -moz-column-gap: 0.5em;
-       column-gap: 0.5em;
-}
-
-footer .useful-link-div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-footer .useful-link-div h5 {
-  font-size: 1.4em;
-  margin: 0 0 0.5em 0;
-}
-
-footer .useful-link-div ul {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1em;
-}
-
-.footer-bottom-section {
-  padding: 1.5em;
+footer .footer-bottom-section {
+  padding: 1.6em;
   text-align: center;
+  border-top: 1px solid white;
 }
 
 /* Gestion du responsive */
 @media (max-width: 768px) {
-  .presentation-section {
+  .navbar {
+    width: 90%;
+  }
+  main .presentation-section {
     padding: 4em 1em;
   }
-  .presentation-section p {
+  main .presentation-section p {
     text-align: center;
   }
-  .galery-section {
+  main .galery-section {
     justify-content: center;
     padding: 4em 0;
   }
-  .galery-section .galery-div {
+  main .galery-section .galery-div {
     border: 1px solid orange;
     width: 90%;
     height: auto;
   }
-  .footer-section {
+  main .beat-band-link-section {
+    padding: 3em 0 5em 0;
+  }
+  main .beat-band-link-section .container-lg {
     flex-direction: column;
     row-gap: 2em;
   }
-  footer .useful-link-div {
+  main .beat-band-link-section .container-lg .card {
+    width: 350px;
+  }
+  footer .footer-section {
+    flex-direction: column;
+    row-gap: 2em;
+  }
+  footer .footer-section .google-map-iframe {
+    width: 100%;
+  }
+  footer .footer-section .useful-link-div {
     align-items: center;
+  }
+  footer .footer-section .useful-link-div ul {
+    align-items: center;
+  }
+  footer .footer-bottom-section {
+    padding: 0.5em 0;
+  }
+  footer .footer-bottom-section p {
+    padding: 0 0.5em;
   }
 }/*# sourceMappingURL=styles.css.map */
