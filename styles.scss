@@ -437,7 +437,9 @@ footer {
 }
 @media (max-width: 768px) {
     .navbar {
-        width: 90%;
+        top: 0;
+        width: 100%;
+
         button {
             // color: white;
             // color: white !important;
@@ -459,7 +461,6 @@ footer {
             padding: 4em 0;
         }
         .galery-section .galery-div {
-            border: 1px solid orange;
             width: 90%;
             height: auto;
         }

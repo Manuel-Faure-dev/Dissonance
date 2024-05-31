@@ -393,7 +393,9 @@ footer .footer-bottom-section {
 /* Gestion du responsive */
 @media (max-width: 768px) {
   .navbar {
-    width: 90%;
+    top: 0;
+    width: 100%;
+    justify-content: flex-end !important;
   }
   main .presentation-section {
     padding: 4em 1em;
@@ -406,7 +408,6 @@ footer .footer-bottom-section {
     padding: 4em 0;
   }
   main .galery-section .galery-div {
-    border: 1px solid orange;
     width: 90%;
     height: auto;
   }
