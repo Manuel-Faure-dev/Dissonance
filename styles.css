@@ -400,7 +400,7 @@ main form {
   background-color: transparent;
   display: flex;
   flex-direction: column;
-  row-gap: 1.2em;
+  row-gap: 1em;
 }
 main form .form-adress-div {
   display: flex;
@@ -446,7 +446,7 @@ main form textarea {
   font-size: 1em;
 }
 main form button {
-  padding: 0.5em 4em;
+  padding: 0.3em 2em;
   border-radius: 1em;
   width: 40%;
   margin-left: 50%;
@@ -560,6 +560,22 @@ footer .footer-bottom-section {
   }
   main .beat-band-link-section .container-lg .card {
     width: 350px;
+  }
+  main .popup-inner {
+    width: 95%;
+  }
+  main .popup__photo {
+    display: none;
+  }
+  main .popup__text {
+    width: auto;
+    padding: 1em 0.2em;
+  }
+  main form div div {
+    width: 100%;
+  }
+  main form input {
+    width: 75%;
   }
   footer .footer-section {
     flex-direction: column;
