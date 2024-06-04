@@ -17,3 +17,18 @@
 //     document.documentElement.scrollTop = 0 // Pour Safari
 //     console.log('test click ')
 // }
+
+// Gestion du formulaire
+const input = document.querySelectorAll('input')
+const textarea = document.querySelector('textarea')
+
+input.forEach((el) => {
+    el.addEventListener('input', () => {
+        if (el.value) {
+            el.style.borderColor = '#01e586'
+        }
+    })
+})
+textarea.addEventListener('input', () => {
+    textarea.style.borderColor = '#01e586'
+})

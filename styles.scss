@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Staatliches&display=swap');
+
 $bg-color: #e6e5e1;
 $shdow-gray: #d3d3d5;
 $band-camp: #1da0c3;
@@ -14,6 +16,8 @@ $black: #030303;
 }
 body {
     background-color: #030303;
+    font-family: 'Rajdhani', sans-serif;
+    //overflow: hidden;
 }
 a,
 p,
@@ -51,6 +55,9 @@ nav {
         display: flex;
         align-items: center;
         justify-content: center;
+        h2 {
+            display: none;
+        }
     }
     ul {
         display: flex;
@@ -59,11 +66,26 @@ nav {
         row-gap: 0.5em;
         padding: 0.4em 0 0.7em 0;
     }
+    .nav-item {
+        position: relative;
+    }
+    .nav-item::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background-color: $band-camp;
+        transition: all 700ms ease-in-out;
+    }
+    .nav-item:hover.nav-item::before {
+        width: 100%;
+    }
+
     .nav-link {
         cursor: pointer;
-    }
-    .nav-link:hover {
-        color: $beatport !important;
+        font-size: 1.1em;
     }
     ul li div {
         display: flex;
@@ -72,6 +94,12 @@ nav {
     }
     .rs-img {
         max-height: 1.5em;
+        filter: grayscale(100%);
+        transition: all 300ms;
+    }
+    .rs-img:hover {
+        filter: grayscale(0);
+        transform: scale(1.2);
     }
     #logo-img {
         height: 3em;
@@ -83,6 +111,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    h1 {
+        font-size: 3em !important;
+    }
     /* Section présentation */
     .presentation-section {
         display: flex;
@@ -101,18 +133,17 @@ main {
             margin: auto;
             padding: 0.5em 2em;
             border-radius: 0.5em;
-            font-size: 1.1em;
+            font-size: 1.3em;
             font-weight: 400;
             transition: 300ms ease;
             border-style: dashed;
             color: white;
             box-shadow: 0px 0px 25px $band-camp;
-            background-color: #333;
+            background-color: #222;
             border-color: $beatport;
         }
         button:hover {
-            color: $beatport;
-            box-shadow: 0px 0px 25px $beatport;
+            box-shadow: 0px 0px 30px $beatport;
         }
     }
 
@@ -428,6 +459,9 @@ main {
             cursor: pointer;
             text-decoration: none;
         }
+        .popup__close:hover {
+            color: $band-camp;
+        }
     }
     form {
         background-color: transparent;
@@ -464,12 +498,10 @@ main {
             background-color: #2a2a2a;
             margin-right: 0.4em;
         }
-
         label {
             border-radius: 1em;
             background-color: transparent;
         }
-
         textarea {
             width: 100%;
             height: 13rem;
@@ -485,6 +517,9 @@ main {
             width: 40%;
             margin-left: 50%;
             transform: translateX(-50%);
+        }
+        button:hover {
+            box-shadow: 5px 5px 25px $beatport;
         }
     }
 }
@@ -524,7 +559,7 @@ footer {
         }
     }
     .footer-section a:hover {
-        color: $beatport;
+        color: $band-camp;
     }
     .footer-contact-div {
         row-gap: 1em;
@@ -558,6 +593,212 @@ footer {
     .footer-mail-div .fa-phone {
         margin-right: 0.5em;
     }
+    // Boutton de lien vers la carte google-map
+    @import url('https://fonts.googleapis.com/css?family=Raleway');
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    .glowing-btn {
+        position: relative;
+        color: $band-camp;
+        cursor: pointer;
+        padding: 0.35em 1em;
+        border: 0.15em solid $band-camp;
+        border-radius: 0.45em;
+        background: none;
+        perspective: 2em;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.3em;
+        font-weight: 900;
+        letter-spacing: 0.4em;
+
+        -webkit-box-shadow: inset 0px 0px 0.5em 0px var($band-camp),
+            0px 0px 0.5em 0px var($band-camp);
+        -moz-box-shadow: inset 0px 0px 0.5em 0px var($band-camp),
+            0px 0px 0.5em 0px var($band-camp);
+        box-shadow: inset 0px 0px 0.5em 0px var($band-camp),
+            0px 0px 0.5em 0px var($band-camp);
+        animation: border-flicker 8s linear infinite;
+    }
+
+    .glowing-txt {
+        float: left;
+        margin-right: -0.8em;
+        -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+            0 0 0.45em var($band-camp);
+        -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+            0 0 0.45em var($band-camp);
+        text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+            0 0 0.45em var($band-camp);
+        animation: text-flicker 10s linear infinite;
+    }
+
+    .faulty-letter {
+        opacity: 0.5;
+        animation: faulty-flicker 8s linear infinite;
+    }
+
+    .glowing-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0.7;
+        filter: blur(1em);
+        transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
+        background: $band-camp;
+        pointer-events: none;
+    }
+
+    .glowing-btn::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        z-index: -1;
+        background-color: var($band-camp);
+        box-shadow: 0 0 2em 0.2em var(--glow-color);
+        transition: opacity 100ms linear;
+    }
+
+    .glowing-btn:hover {
+        color: rgba(0, 0, 0, 0.8);
+        text-shadow: none;
+        animation: none;
+    }
+
+    .glowing-btn:hover .glowing-txt {
+        animation: none;
+    }
+
+    .glowing-btn:hover .faulty-letter {
+        animation: none;
+        text-shadow: none;
+        opacity: 1;
+    }
+
+    .glowing-btn:hover:before {
+        filter: blur(1.5em);
+        opacity: 1;
+    }
+
+    .glowing-btn:hover:after {
+        opacity: 1;
+    }
+
+    @keyframes faulty-flicker {
+        0% {
+            opacity: 0.1;
+        }
+        2% {
+            opacity: 0.1;
+        }
+        4% {
+            opacity: 0.5;
+        }
+        19% {
+            opacity: 0.5;
+        }
+        21% {
+            opacity: 0.1;
+        }
+        23% {
+            opacity: 1;
+        }
+        80% {
+            opacity: 0.5;
+        }
+        83% {
+            opacity: 0.4;
+        }
+
+        87% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes text-flicker {
+        0% {
+            opacity: 0.1;
+        }
+
+        2% {
+            opacity: 1;
+        }
+
+        8% {
+            opacity: 0.1;
+        }
+
+        9% {
+            opacity: 1;
+        }
+
+        12% {
+            opacity: 0.1;
+        }
+        20% {
+            opacity: 1;
+        }
+        25% {
+            opacity: 0.3;
+        }
+        30% {
+            opacity: 1;
+        }
+
+        70% {
+            opacity: 0.7;
+        }
+        72% {
+            opacity: 0.2;
+        }
+
+        77% {
+            opacity: 0.9;
+        }
+        100% {
+            opacity: 0.9;
+        }
+    }
+
+    @keyframes border-flicker {
+        0% {
+            opacity: 0.1;
+        }
+        2% {
+            opacity: 1;
+        }
+        4% {
+            opacity: 0.1;
+        }
+
+        8% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 0.7;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .glowing-btn {
+            font-size: 1em;
+        }
+    }
+
     .footer-bottom-section {
         padding: 1.6em;
         text-align: center;
@@ -566,28 +807,58 @@ footer {
 }
 
 /* Gestion du responsive */
-@media (max-width: 1024px) {
-}
-@media (max-width: 768px) {
+@media (max-width: 991px) {
     .navbar {
-        top: 0;
         width: 100%;
+        padding: 0;
+        top: 0;
 
-        button {
-            // color: white;
-            // color: white !important;
-            // //background-color: #fff;
-        }
-        span {
-            // color: white !important;
+        div {
+            height: 4em;
+            //padding: 0 1em;
+            h2 {
+                display: flex;
+                margin-bottom: 0;
+            }
         }
     }
-    header {
-        background-size: contain;
+    nav ul li:first-child {
+        display: none;
+    }
+    .navbar-brand {
+        margin-right: 0;
+        row-gap: 2em;
     }
     main {
         .presentation-section {
-            padding: 4em 1em;
+            padding: 0 2em 5em 2em;
+            text-align: center;
+        }
+        .galery-section {
+            flex-direction: column;
+            align-items: center;
+            padding: 4em 0;
+            .galery-div {
+                width: 90%;
+                height: auto;
+            }
+        }
+        .beat-band-link-section {
+            div {
+                flex-direction: column !important;
+                row-gap: 4em;
+            }
+        }
+    }
+}
+@media (max-width: 768px) {
+    header {
+        background-size: contain;
+    }
+
+    main {
+        .presentation-section {
+            padding: 0 1em 4em 1em;
         }
         .presentation-section p {
             text-align: center;

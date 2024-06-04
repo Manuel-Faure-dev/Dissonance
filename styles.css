@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Staatliches&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +11,7 @@
 
 body {
   background-color: #030303;
+  font-family: "Rajdhani", sans-serif;
 }
 
 a,
@@ -52,6 +54,9 @@ nav div {
   align-items: center;
   justify-content: center;
 }
+nav div h2 {
+  display: none;
+}
 nav ul {
   display: flex;
   justify-content: space-around;
@@ -59,11 +64,25 @@ nav ul {
   row-gap: 0.5em;
   padding: 0.4em 0 0.7em 0;
 }
+nav .nav-item {
+  position: relative;
+}
+nav .nav-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #1da0c3;
+  transition: all 700ms ease-in-out;
+}
+nav .nav-item:hover.nav-item::before {
+  width: 100%;
+}
 nav .nav-link {
   cursor: pointer;
-}
-nav .nav-link:hover {
-  color: #01e586 !important;
+  font-size: 1.1em;
 }
 nav ul li div {
   display: flex;
@@ -73,6 +92,12 @@ nav ul li div {
 }
 nav .rs-img {
   max-height: 1.5em;
+  filter: grayscale(100%);
+  transition: all 300ms;
+}
+nav .rs-img:hover {
+  filter: grayscale(0);
+  transform: scale(1.2);
 }
 nav #logo-img {
   height: 3em;
@@ -87,6 +112,9 @@ main {
   /* Section Galerie */
   /* Section link Beatport et band camp */
   @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600&subset=latin-ext");
+}
+main h1 {
+  font-size: 3em !important;
 }
 main .presentation-section {
   display: flex;
@@ -106,18 +134,17 @@ main .presentation-section button {
   margin: auto;
   padding: 0.5em 2em;
   border-radius: 0.5em;
-  font-size: 1.1em;
+  font-size: 1.3em;
   font-weight: 400;
   transition: 300ms ease;
   border-style: dashed;
   color: white;
   box-shadow: 0px 0px 25px #1da0c3;
-  background-color: #333;
+  background-color: #222;
   border-color: #01e586;
 }
 main .presentation-section button:hover {
-  color: #01e586;
-  box-shadow: 0px 0px 25px #01e586;
+  box-shadow: 0px 0px 30px #01e586;
 }
 main .galery-section {
   display: flex;
@@ -396,6 +423,9 @@ main .popup__close {
   cursor: pointer;
   text-decoration: none;
 }
+main .popup .popup__close:hover {
+  color: #1da0c3;
+}
 main form {
   background-color: transparent;
   display: flex;
@@ -452,8 +482,14 @@ main form button {
   margin-left: 50%;
   transform: translateX(-50%);
 }
+main form button:hover {
+  box-shadow: 5px 5px 25px #01e586;
+}
 
 /*---------------- Partie Footer -------------*/
+footer {
+  @import url("https://fonts.googleapis.com/css?family=Raleway");
+}
 footer .footer-section {
   border-top: 1px solid white;
   /* width: 80%; */
@@ -488,7 +524,7 @@ footer .footer-section .useful-link-div ul {
   row-gap: 1em;
 }
 footer .footer-section a:hover {
-  color: #01e586;
+  color: #1da0c3;
 }
 footer .footer-contact-div {
   row-gap: 1em;
@@ -522,6 +558,177 @@ footer .footer-mail-div .fa-envelope,
 footer .footer-mail-div .fa-phone {
   margin-right: 0.5em;
 }
+footer *,
+footer *::before,
+footer *::after {
+  box-sizing: border-box;
+}
+footer .glowing-btn {
+  position: relative;
+  color: #1da0c3;
+  cursor: pointer;
+  padding: 0.35em 1em;
+  border: 0.15em solid #1da0c3;
+  border-radius: 0.45em;
+  background: none;
+  perspective: 2em;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.3em;
+  font-weight: 900;
+  letter-spacing: 0.4em;
+  box-shadow: inset 0px 0px 0.5em 0px var(#1da0c3), 0px 0px 0.5em 0px var(#1da0c3);
+  animation: border-flicker 8s linear infinite;
+}
+footer .glowing-txt {
+  float: left;
+  margin-right: -0.8em;
+  -webkit-text-shadow: 0 0 0.125em hsla(0, 0%, 100%, 0.3), 0 0 0.45em var(#1da0c3);
+  -moz-text-shadow: 0 0 0.125em hsla(0, 0%, 100%, 0.3), 0 0 0.45em var(#1da0c3);
+  text-shadow: 0 0 0.125em hsla(0, 0%, 100%, 0.3), 0 0 0.45em var(#1da0c3);
+  animation: text-flicker 10s linear infinite;
+}
+footer .faulty-letter {
+  opacity: 0.5;
+  animation: faulty-flicker 8s linear infinite;
+}
+footer .glowing-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.7;
+  filter: blur(1em);
+  transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
+  background: #1da0c3;
+  pointer-events: none;
+}
+footer .glowing-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+  background-color: var(#1da0c3);
+  box-shadow: 0 0 2em 0.2em var(--glow-color);
+  transition: opacity 100ms linear;
+}
+footer .glowing-btn:hover {
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: none;
+  animation: none;
+}
+footer .glowing-btn:hover .glowing-txt {
+  animation: none;
+}
+footer .glowing-btn:hover .faulty-letter {
+  animation: none;
+  text-shadow: none;
+  opacity: 1;
+}
+footer .glowing-btn:hover:before {
+  filter: blur(1.5em);
+  opacity: 1;
+}
+footer .glowing-btn:hover:after {
+  opacity: 1;
+}
+@keyframes faulty-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 0.1;
+  }
+  4% {
+    opacity: 0.5;
+  }
+  19% {
+    opacity: 0.5;
+  }
+  21% {
+    opacity: 0.1;
+  }
+  23% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  83% {
+    opacity: 0.4;
+  }
+  87% {
+    opacity: 1;
+  }
+}
+@keyframes text-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 1;
+  }
+  8% {
+    opacity: 0.1;
+  }
+  9% {
+    opacity: 1;
+  }
+  12% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  72% {
+    opacity: 0.2;
+  }
+  77% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+@keyframes border-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 1;
+  }
+  4% {
+    opacity: 0.1;
+  }
+  8% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 600px) {
+  footer .glowing-btn {
+    font-size: 1em;
+  }
+}
 footer .footer-bottom-section {
   padding: 1.6em;
   text-align: center;
@@ -529,16 +736,50 @@ footer .footer-bottom-section {
 }
 
 /* Gestion du responsive */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .navbar {
-    top: 0;
     width: 100%;
+    padding: 0;
+    top: 0;
   }
+  .navbar div {
+    height: 4em;
+  }
+  .navbar div h2 {
+    display: flex;
+    margin-bottom: 0;
+  }
+  nav ul li:first-child {
+    display: none;
+  }
+  .navbar-brand {
+    margin-right: 0;
+    row-gap: 2em;
+  }
+  main .presentation-section {
+    padding: 0 2em 5em 2em;
+    text-align: center;
+  }
+  main .galery-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 4em 0;
+  }
+  main .galery-section .galery-div {
+    width: 90%;
+    height: auto;
+  }
+  main .beat-band-link-section div {
+    flex-direction: column !important;
+    row-gap: 4em;
+  }
+}
+@media (max-width: 768px) {
   header {
     background-size: contain;
   }
   main .presentation-section {
-    padding: 4em 1em;
+    padding: 0 1em 4em 1em;
   }
   main .presentation-section p {
     text-align: center;
